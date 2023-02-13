@@ -69,10 +69,11 @@
     scene.add(starMesh);
 
     //surrounding stars
-    stars = [starGeometry(size), starGeometry(size), starGeometry(size), starGeometry(size), starGeometry(size), starGeometry(size)]
+    stars = [];//starGeometry(size), starGeometry(size), starGeometry(size), starGeometry(size), starGeometry(size), starGeometry(size)]
     starMaterials = [];
     starMeshs = [];
     for (var i = 0; i < 6; i++) {
+      stars[i] = starGeometry(size);
       starMaterials[i] = new THREE.MeshBasicMaterial({color:colors[i], side: THREE.DoubleSide});
       starMeshs[i] = new THREE.Mesh(stars[i], starMaterials[i]);
       angle = i * (Math.PI / 3);
